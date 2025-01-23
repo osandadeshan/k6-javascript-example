@@ -1,6 +1,6 @@
 # Step-by-Step Guide to Load Testing with k6
 
-Load testing is a crucial step in ensuring your web application’s performance and stability under stress. k6 is an open-source load testing tool designed to be developer-friendly and efficient. Here explains the process of setting up and running load tests using k6, from installation to writing scripts and interpreting results.
+Load testing is a crucial step in ensuring your web application’s performance and stability under stress. k6 is an open-source load testing tool designed to be developer-friendly and efficient. Here, explains the process of setting up and running load tests using k6, from installation to writing scripts and interpreting results.
 
 ## Step 1: Installing k6
 
