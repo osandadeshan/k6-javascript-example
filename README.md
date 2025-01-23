@@ -136,13 +136,13 @@ This script does the following:
 
 k6 provides a built-in web dashboard that you can enable to visualize and monitor your tests results in real-time.
 
-The web dashboard is a built-in feature of k6. You can enable it by setting the K6_WEB_DASHBOARD environment variable to true when running your test script, for example:
+The web dashboard is a built-in feature of k6. You can enable it by setting the `K6_WEB_DASHBOARD` environment variable to `true` when running your test script, for example:
 
 ```
 K6_WEB_DASHBOARD=true k6 run load.test.js
 ```
 
-To automatically generate a report from the command line once the test finishes running, use the K6_WEB_DASHBOARD_EXPORT option. For example:
+To automatically generate a report from the command line once the test finishes running, use the `K6_WEB_DASHBOARD_EXPORT` option. For example:
 
 ```
 K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run load.test.js
