@@ -1,0 +1,15 @@
+{
+  "name": "k6-javascript-example",
+  "version": "1.0.0",
+  "description": "A sample project demonstrating how to perform load testing using k6.",
+  "main": "",
+  "scripts": {
+    "test": "K6_WEB_DASHBOARD=true k6 run src/test/load.test.js",
+    "test-dev": "K6_WEB_DASHBOARD=true k6 run --vus 10 --duration 30s src/test/load.test.js"
+  },
+  "author": "Osanda Nimalarathna",
+  "license": "ISC",
+  "dependencies": {
+    "k6": "^0.0.0"
+  }
+}
