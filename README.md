@@ -35,7 +35,7 @@ choco install k6
 
 k6 scripts are written in JavaScript. Let’s start with a simple example.
 
-1.  Open your code editor and create a new file named `load_test.js`.
+1.  Open your code editor and create a new file named `load.test.js`.
 2.  Write the following code:
 
 ```
@@ -51,10 +51,10 @@ This script performs an HTTP GET request to `https://test.k6.io` and then pauses
 
 ## Step 3: Running Your k6 Script
 
-To run your k6 script, open your terminal and navigate to the directory containing `load_test.js`. Then, execute:
+To run your k6 script, open your terminal and navigate to the directory containing `load.test.js`. Then, execute:
 
 ```
-k6 run load_test.js
+k6 run load.test.js
 ```
 
 You’ll see k6 output, showing details about the test run, including the number of requests, response times, and more.
@@ -64,7 +64,7 @@ You’ll see k6 output, showing details about the test run, including the number
 Virtual Users (VUs) simulate real users accessing your application. You can specify the number of VUs and the duration of the test:
 
 ```
-k6 run --vus 10 --duration 30s load_test.js
+k6 run --vus 10 --duration 30s load.test.js
 ```
 
 This command runs the test with 10 VUs for 30 seconds.
@@ -73,7 +73,7 @@ This command runs the test with 10 VUs for 30 seconds.
 
 Let’s create a more complex scenario where the number of users ramps up, holds steady, and then ramps down.
 
-1.  Open your `load_test.js` file.
+1.  Open your `load.test.js` file.
 2.  Modify it as follows:
 
 ```
@@ -98,7 +98,7 @@ export default function () {
 
 You can create custom metrics to gather specific performance data. Let’s add a custom metric to our script.
 
-1.  Open your `load_test.js` file.
+1.  Open your `load.test.js` file.
 2.  Modify it as follows:
 
 ```
@@ -134,13 +134,27 @@ This script does the following:
 
 ## Step 7: Monitoring and Reporting
 
+k6 provides a built-in web dashboard that you can enable to visualize and monitor your tests results in real-time.
+
+The web dashboard is a built-in feature of k6. You can enable it by setting the K6_WEB_DASHBOARD environment variable to true when running your test script, for example:
+
+```
+K6_WEB_DASHBOARD=true k6 run load.test.js
+```
+
+To automatically generate a report from the command line once the test finishes running, use the K6_WEB_DASHBOARD_EXPORT option. For example:
+
+```
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run load.test.js
+```
+
 k6 can send test results to various monitoring and reporting tools like Grafana and InfluxDB. Here’s how you can send results to InfluxDB:
 
 1.  Run InfluxDB on your machine or use a cloud service.
-2.  Modify your `load_test.js` to include the output option:
+2.  Modify your `load.test.js` to include the output option:
 
 ```
-k6 run --out influxdb=http://localhost:8086/k6 load_test.js
+k6 run --out influxdb=http://localhost:8086/k6 load.test.js
 ```
 
 You can then use Grafana to visualize the results by connecting it to your InfluxDB database.
@@ -149,7 +163,7 @@ You can then use Grafana to visualize the results by connecting it to your Influ
 
 Let’s create a more realistic load test script that tests multiple endpoints and simulates different user behaviors.
 
-1.  Open your `load_test.js` file.
+1.  Open your `load.test.js` file.
 2.  Modify it as follows:
 
 ```
